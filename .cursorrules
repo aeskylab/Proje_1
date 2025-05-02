@@ -1,0 +1,91 @@
+# Proje Kuralları ve Kodlama Standartları
+
+Bu kurallar, proje karmaşıklığını azaltmak, sürdürülebilirlik sağlamak ve modern yazılım geliştirme süreçlerinde tutarlılığı artırmak amacıyla hazırlanmıştır.
+
+---
+
+## 1. Tasarım ve UI/UX
+
+- Modern UI/UX kütüphaneleri (Material Design, Apple Human Interface, Tailwind, Shadcn, MUI) kullanılmalı.
+- Renk paleti, tipografi ve layout öğeleri tüm projede tutarlı olmalı.
+- Tasarım mobil uyumlu (responsive) ve kullanıcı odaklı olmalı.
+- UI bileşenleri, kullanıcı deneyimini iyileştirmek amacıyla minimum eforla anlaşılabilir olmalı.
+- WCAG standartlarına uygunluk sağlanmalı (kontrast, aria-etiketleri, klavye erişimi).
+
+---
+
+## 2. Component Mimarisi
+
+- Kodlar tamamen component yapısında organize edilmeli.
+- Component’ler `components/ComponentName/ComponentName.ext` şeklinde ayrı klasörlerde tutulmalı.
+- Her component tek sorumluluk ilkesine göre geliştirilmelidir.
+- Gereksiz tekrar eden kodlardan kaçınılmalı, component’ler sade ve optimize yazılmalı.
+- Hiçbir component dosyası 600-700 satırı geçmemeli.
+- İlgili stil, test ve yardımcı dosyalar aynı klasörde toplanmalı.
+
+---
+
+## 3. Utility ve Servis Yapısı
+
+- Ortak yardımcı fonksiyonlar `utils/` klasöründe toplanmalı.
+- API servisleri `services/` klasöründe async/await yapısı ile yazılmalı.
+- Hata yönetimi standartlaştırılmalı, servisler test edilebilir yapıda olmalı.
+
+---
+
+## 4. Kod Stili ve Formatlama
+
+- Kod Prettier ile otomatik biçimlendirilmeli, ESLint ile stil ve hata kontrolleri yapılmalı.
+- Component isimleri PascalCase, fonksiyon ve değişken isimleri camelCase olmalı.
+- Gereksiz yorum satırları kullanılmamalı, sadece karmaşık logic açıklanmalı.
+- Kod formatlama tüm proje genelinde tutarlı olmalı.
+
+---
+
+## 5. State Yönetimi
+
+- Küçük projelerde Context API, büyük projelerde Redux, Zustand veya benzeri çözümler tercih edilmeli.
+- Global state’ler merkezi bir yapıda yönetilmeli, component’ler arasında veri akışı kontrollü olmalı.
+
+---
+
+## 6. Performans
+
+- `React.memo`, `useMemo`, `useCallback` gibi optimizasyon yöntemleri aktif kullanılmalı.
+- Büyük veri listeleri ve UI elementlerinde lazy loading, pagination gibi teknikler tercih edilmeli.
+- Kullanılmayan görseller, asset’ler ve import’lar projeden temizlenmeli.
+
+---
+
+## 7. Test Süreçleri
+
+- Her component/fonksiyon için unit test yazılmalı (`__tests__/` altında tutulmalı).
+- Jest ve Testing Library kullanılmalı.
+- Kullanıcı akışları için Cypress gibi araçlarla E2E testler yazılmalı.
+- Tüm testler otomasyon sürecine dahil edilmeli (CI/CD).
+
+---
+
+## 8. Versiyon Kontrolü ve Git Kullanımı
+
+- Her iş için ayrı branch açılmalı (`feature/`, `bugfix/`, `hotfix/`).
+- Commit mesajları kısa, öz ve ne yaptığı anlaşılır biçimde yazılmalı.
+- Merge işlemleri pull request ile yapılmalı ve en az bir kişi tarafından review edilmeli.
+
+---
+
+## 9. Erişilebilirlik (Accessibility)
+
+- WCAG standartları esas alınmalı.
+- Tüm önemli UI elementleri için `aria-*` etiketleri kullanılmalı.
+- Yüksek kontrast oranı, yazı boyutu ve klavye navigasyonu desteklenmeli.
+
+---
+
+## 10. İyileştirme ve Sürdürülebilirlik
+
+- Kodlar okunabilir, test edilebilir ve yeniden kullanılabilir şekilde yazılmalı.
+- Geliştirilen her yapı gelecekte kolayca genişletilebilir olmalı.
+- AI araçları (Cursor AI gibi) kod düzeni, analiz ve üretkenlik artırımı için aktif olarak kullanılmalı.
+
+---
